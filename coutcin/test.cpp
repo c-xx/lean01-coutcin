@@ -23,6 +23,37 @@ namespace B
 }
 
 using namespace B;
+
+
+/************************************************************************/
+/* 数组中，获取最大或者最小                                                                     */
+/************************************************************************/
+int getMaxOrMin(int *arr, int count, bool isMax) {
+	int temp = arr[0];
+
+	for (int i = 1; i < count; i++)
+	{
+		if (isMax)
+		{
+			if (temp < arr[i])
+			{
+				temp = arr[i];
+			}
+		}
+		else {
+			if (temp > arr[i])
+			{
+				temp = arr[i];
+			}
+		}
+
+
+	}
+
+	return temp;
+}
+
+
 int main(void)
 {
 	
@@ -33,6 +64,12 @@ int main(void)
 	B::fun();
 	fun2(); // 命名空间使用
 
+
+
+	int arr1[4] = { 3, 5, 1, 7 };
+	bool isMax = false;
+	cin >> isMax;
+	cout << getMaxOrMin(arr1, 4, isMax) << endl;
 
 	system("pause");
 	return 0;
